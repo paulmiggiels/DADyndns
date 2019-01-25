@@ -16,9 +16,17 @@ Should run on any Ubuntu or Debian machine. Designed on Raspbian.
 
 Place the script in a folder of your liking. Edit the server variables to the correct user, server and subdomains. Test the script, and then set the cron job.
 
-*Note 1: user & password are stored plaintext - use a login key with CMD_DNS_API_CONTROL permission only for security.
-Note 2: for optimal use, set the cron job to log to* `/var/log/DADyndns.log`
+*Note: user & password are stored plaintext - use a login key with CMD_DNS_API_CONTROL permission only for security.*
 
+Cron-job example to run every 30 minutes. Runs the job from within the folder, so the ipaddress file and log are stored in the same location as the shell script.
+```
+*/30 * * * * cd /home/usr/scripts/DADyndns && ./DADyndns.sh >> DADyndns.log 2>&1
+```
+
+Optional: pipe the output through a timestamp script to add date/time stamp to the logs. See http://mpcabd.xyz/adding-a-timestamp-to-command-output-in-linux/ for the timestamp script.
+```
+*/30 * * * * cd /home/usr/scripts/DADyndns && ./DADyndns.sh 2>&1 | /home/usr/scripts/timestamp.sh >> DADyndns.log
+```
 
 ## Running the tests
 
