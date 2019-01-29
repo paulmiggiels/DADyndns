@@ -10,7 +10,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-Should run on any Ubuntu or Debian machine. Designed on Raspbian.
+Should run on any Ubuntu or Debian machine. Written on Raspbian Stretch. Requires 'curl' to be installed.
 
 ### Installing
 
