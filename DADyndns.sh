@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -o errexit
-
 # User and server details
 user="username"
 password="loginkey"
